@@ -1,0 +1,33 @@
+nav {
+    background-color: #333; /* Dark background for the nav bar */
+    padding: 10px 20px; /* Add some space inside the nav bar */
+    position: sticky; /* Make it stick to the top when scrolling */
+    top: 0; /* Position it at the very top */
+    z-index: 1000; /* Ensure it stays on top of other elements */
+}
+
+nav ul {
+    display: flex; /* Align items horizontally */
+    justify-content: center; /* Center the menu items */
+    list-style-type: none; /* Remove bullet points */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+nav ul li {
+    margin: 0 15px; /* Space between items */
+}
+
+nav ul li a {
+    text-decoration: none; /* Remove underline from links */
+    color: white; /* White text color */
+    font-weight: bold; /* Make text bold */
+    font-size: 18px; /* Adjust font size */
+    transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+nav ul li a:hover {
+    color: #00bcd4; /* Change color on hover */
+    text-decoration: none; 
+}
+  
