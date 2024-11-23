@@ -1,33 +1,187 @@
-nav {
-    background-color: #333; /* Dark background for the nav bar */
-    padding: 10px 20px; /* Add some space inside the nav bar */
-    position: sticky; /* Make it stick to the top when scrolling */
-    top: 0; /* Position it at the very top */
-    z-index: 1000; /* Ensure it stays on top of other elements */
+
+
+
+.name {
+    font-family: 'Kalnia Glaze';
+    color: #333; 
+    font-size: 2.8em;
+    opacity: 20;
+    animation: subtleFadeSlide 3s ease-in-out forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+    text-align: center;     /* Optional for aligning text inside */
+    height: 100%;           /* Full view height */
+    width: 100%;    
+    background-color: rgb(255, 225, 169);
+} 
+
+
+
+@keyframes subtleFadeSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(10px); /* Start slightly below */
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Settle in place */
+    }
 }
 
-nav ul {
-    display: flex; /* Align items horizontally */
-    justify-content: center; /* Center the menu items */
-    list-style-type: none; /* Remove bullet points */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+.name:hover {
+    color: #555; /* Slightly change color on hover */
+    transform: translateY(-5px); /* Gentle lift */
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-nav ul li {
-    margin: 0 15px; /* Space between items */
+
+.me {
+    margin-top: 20px; /* Adds spacing between the text and the image */
+    text-align: center; /* Ensures the image is centered */
+
 }
 
-nav ul li a {
-    text-decoration: none; /* Remove underline from links */
-    color: white; /* White text color */
-    font-weight: bold; /* Make text bold */
-    font-size: 18px; /* Adjust font size */
-    transition: color 0.3s ease; /* Smooth color change on hover */
+.me img {
+    border-radius: 50%;
+    max-width: 150px; /* Optional: Restrict image size */
+    height: auto; /* Maintain aspect ratio */
 }
 
-nav ul li a:hover {
-    color: #00bcd4; /* Change color on hover */
-    text-decoration: none; 
+
+.emoji {
+    display: inline-block; /* Ensures it can be animated */
+    transform-origin: right bottom; /* Adjust rotation point */
+    animation: wave 2.4s infinite; 
 }
-  
+
+@keyframes wave {
+      0% {
+        transform: rotate(0deg);
+    }
+    10% {
+        transform: rotate(15deg);
+    }
+    20% {
+        transform: rotate(-10deg);
+    }
+    30% {
+        transform: rotate(10deg);
+    }
+    40% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(0deg); /*Pause*/
+    }
+    100% {
+        transform: rotate(0deg); /* Pause */
+    }
+}
+.slides {
+    width: 100vw;
+    height: 100vh;
+    border: none; 
+    display: flex;
+    align-items: stretch;
+    transition: transform 0.5s ease-in-out;
+
+}
+
+.slide {
+    flex: 0 0 100%; /* Ensure each slide takes full width */
+    height: 100vh;
+    /* display: flex; Enable alignment for child elements */
+    justify-content: center; /* Center children horizontally */
+    align-items: center; /* Center children vertically */
+    background-color: #f9f9f9; /* Optional background color for visibility */
+}
+
+button.prev, button.next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    padding: 10px 5px;
+    cursor: pointer;
+    z-index: 10;
+   
+}
+
+button.prev {
+    left: 10px; /* Align to the left edge */
+}
+
+button.next {
+    right: 10px; /* Align to the right edge */
+}
+
+.my-bio {
+    display: flex; 
+    height: 100%; /* Match slide height */
+    width: 100%; /* Match slide width */
+    background-color: rgb(200, 200, 200); /* Temporary for visibility */
+}
+
+
+@font-palette-values --Custom{
+    font-family: 'Kalnia Glaze';
+    base-palette: 1;
+    override-colors: 
+        1 teal;
+}
+
+.title{
+    /* animation: none; */
+    font-family: 'Honk';
+    align-items: center;
+    display: flex;
+    text-align: center;
+    font-size: 5em;
+    font-style: italic;
+    font-palette: --Custom;
+    
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+.socialButtons{
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+}
+
+.socialButtons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 25px;
+}
+
+.socialButtons a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    transition: text-shadow 0.3s ease;
+}
+
+
+.socialButtons a:hover {
+    text-shadow: 2px 2px rgb(0, 0, 0);
+    color: #c7c7c7; /* Optional: change hover text color */
+}
+
+
